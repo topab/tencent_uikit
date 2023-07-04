@@ -136,6 +136,8 @@ class TIMUIKitChat extends StatefulWidget {
   /// Custom text field
   final Widget Function(BuildContext context)? textFieldBuilder;
 
+  final Widget? textfieldTopFixWidget;
+
   TIMUIKitChat(
       {Key? key,
       this.groupID,
@@ -168,6 +170,7 @@ class TIMUIKitChat extends StatefulWidget {
       this.toolTipsConfig,
       this.lifeCycle,
       this.topFixWidget = const SizedBox(),
+      this.textfieldTopFixWidget = const SizedBox(),
       this.textFieldBuilder,
       this.customEmojiStickerList = const [],
       this.customAppBar})
@@ -454,6 +457,7 @@ class _TUIChatState extends TIMUIKitState<TIMUIKitChat> {
                                   ),
                                 )),
                           )),
+                          widget.textfieldTopFixWidget,
                           Selector<TUIChatSeparateViewModel, bool>(
                             builder: (context, value, child) {
                               return value
