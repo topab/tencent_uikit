@@ -457,7 +457,8 @@ class _TUIChatState extends TIMUIKitState<TIMUIKitChat> {
                                   ),
                                 )),
                           )),
-                          widget.textfieldTopFixWidget,
+                          if (widget.textfieldTopFixWidget != null)
+                            widget.textfieldTopFixWidget!,
                           Selector<TUIChatSeparateViewModel, bool>(
                             builder: (context, value, child) {
                               return value
